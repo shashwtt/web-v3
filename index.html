@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shashwat Dubey</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="noise"></div>
+    <header>
+      <div class="inner">
+        <h1>shashwt.me/<span>home</span></h1>
+        <div class="menu">
+          <svg
+            width="54"
+            height="37"
+            viewBox="0 0 54 37"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M50.55 14.6394H19.05C18.4704 14.6394 18 14.4423 18 14.1995V12.4399C18 12.1971 18.4704 12 19.05 12H50.55C51.1296 12 51.6 12.1971 51.6 12.4399V14.1995C51.6 14.4423 51.1296 14.6394 50.55 14.6394Z"
+            />
+            <path
+              d="M50.5416 23.01H27.4584C26.8746 23.01 26.4 22.8112 26.4 22.5666V20.814C26.4 20.5694 26.8746 20.3706 27.4584 20.3706H50.5416C51.1254 20.3706 51.6 20.5694 51.6 20.814V22.5666C51.6 22.8112 51.1254 23.01 50.5416 23.01Z"
+            />
+          </svg>
+          <span> menu </span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="s1">
+        <div class="scrolldown">
+          <span>scroll</span>
+          <svg
+            width="23"
+            height="44"
+            viewBox="0 0 23 44"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12.4995 1.96251C12.4788 1.13434 11.7907 0.479764 10.9625 0.500468C10.1343 0.521173 9.47976 1.20932 9.50047 2.03749L12.4995 1.96251ZM10.9662 43.0868C11.5664 43.6578 12.5159 43.6341 13.0868 43.0338L22.3912 33.2523C22.9622 32.652 22.9385 31.7026 22.3382 31.1316C21.738 30.5607 20.7885 30.5844 20.2175 31.1846L11.947 39.8793L3.25229 31.6088C2.65204 31.0378 1.70259 31.0615 1.13163 31.6618C0.560665 32.262 0.584401 33.2115 1.18465 33.7825L10.9662 43.0868ZM9.50047 2.03749L10.5005 42.0375L13.4995 41.9625L12.4995 1.96251L9.50047 2.03749Z"
+            />
+          </svg>
+        </div>
+        <div class="inner">
+          <div class="intro">
+            <div class="name">
+              <div class="time" id="time">09:00 PM</div>
+              Shashwat Dubey
+            </div>
+            <div class="desc">
+              A multidisciplinary web developer with passion for software
+              development and technology. I help companies grow and expand their
+              brands through digital media.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="s2">
+        <div class="inner">
+
+        </div>
+      </section>
+    </main>
+
+    <script>
+      function getTime() {
+        const timezoneOffset = 330; // offset in minutes for UTC+5:30
+        const date = new Date(Date.now() + timezoneOffset * 60 * 1000); // adjust for timezone offset
+        const hours = date.getUTCHours();
+        const minutes = date.getUTCMinutes();
+        const ampm = hours >= 12 ? "PM" : "AM";
+        const formattedHours = hours % 12 || 12;
+        const formattedMinutes = minutes < 10 ? "0" + minutes : minutes;
+        return `${formattedHours}:${formattedMinutes} ${ampm}`;
+      }
+
+      document.querySelector("#time").innerText = getTime();
+
+      var sc = document.querySelector(".scrolldown");
+      sc.addEventListener("click", function () {
+        window.scrollY < window.innerHeight
+          ? window.scrollTo(0, window.innerHeight)
+          : window.scrollTo(0, window.innerHeight * 2);
+      });
+    </script>
+  </body>
+</html>
